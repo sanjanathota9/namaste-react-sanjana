@@ -1,0 +1,25 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjanathota9/namaste-react-sanjana.git"
+  },
+  "keywords": [
+    "sanjana"
+  ],
+  "author": "sanjana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjanathota9/namaste-react-sanjana/issues"
+  },
+  "homepage": "https://github.com/sanjanathota9/namaste-react-sanjana#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
