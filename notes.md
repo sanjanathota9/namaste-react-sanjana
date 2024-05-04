@@ -1,0 +1,17 @@
+The crossorigin attribute is like a passport for resources on a webpage. It controls how the browser requests resources from other domains (websites).
+<script>, and <video> to specify how to handle the request.
+There are two main ways the crossorigin attribute works:
+
+Anonymous: This tells the browser to not send any cookies or user credentials with the request. It's like getting a visitor's pass to the other country.
+Use-credentials: This allows the browser to send cookies and credentials if the server allows it. It's like getting a visa for the other country.
+In summary: The crossorigin attribute helps you control how your webpage interacts with resources from other domains, ensuring both security and functionality.
+
+
+It's a network of servers spread around the world that stores copies of a website's content (like images and videos). When someone visits the website, their computer downloads the content from the server closest to them, making the website load faster. 
+CDN links are specific addresses that point to files hosted on a content delivery network (CDN).  These links can be used to include things like JavaScript libraries, images, or stylesheets on a website.
+
+
+$ cat 'C:/Users/SanjuPrani/.ssh/id_rsa.pub'
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCYcPsvCe/NsShpkRWPYnKeKIM5SSNeTJzoWVTT1ripeJU5VQHVXzyp/s8HfGXd2F6sDf894FVgp5FX6CPuqo/70cvPNnWbvpjgES2EWuHM+w8jdboz+gyv4WPb0I6MtkCBQHZfbLDvO3tMbGtqSoMYeB4thvyRBP5isWFdPE3/zuPz+YL053c3R93n1rSfvwkitAxBsujJyf8ebWSC7LAA2gWXhwmVGoo2DugF3LliQFm6p0sEeHCroA9N3H82fdCJTPxHYO4VmDrGtelKtaGiHh9ui+OkSKCRjxgEeUlPvDB2m5rBHFJPA89WVNXRGF7faeTO7+VeTiun5Kxy2K7a5eOryzLfYIK/nHeECXihiGWVUQU75OUTi7jAZhsZu10J1X/u8/XuGi/1ipmbw+mTK7wOUUHeUwsjsh/n0lkjR6gShqrXR8YpnnFKWErS55HFVF2HfBeKvuktR1XPaVgyJVMAMFNtQOPcwvBePEKvhWO+zRN4JWfOOaZRLAFkm0oDvqnGGeY/axTUjfH7QlHDn8lOIbJz7v7bUbEu0uSFDDZAAiwstnd1CwyHJjslUYUkwLw6hja1aeahcWpL+IA9jOQUNzZ0SSl4NQv/SCLhYGGwybw1PgUci2GY3VsPb8Z8EqqDuULl5DFXWDOTxbMzhXfmmC0fZ7I6xBTd+o0bjQ== sanjanat1994@gmail.com
+
+passphrase ---sanjana
