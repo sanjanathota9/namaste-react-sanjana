@@ -21,7 +21,6 @@
 }
 .restaurant-card {
   width: 200px;
-  height: 350px;
   padding: 5px;
   margin: 5px;
   background: #f0f0f0;
@@ -44,4 +43,28 @@
 }
 .filter-btn {
   margin: 1rem;
+}
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  width: 300px;
+  height: 350px;
+  background-color: #f0f0f0;
+  margin-right: 10px;
+}
+.login {
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 5rem;
+}
+.filter-section {
+  display: flex;
 }

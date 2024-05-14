@@ -1,5 +1,8 @@
 import logo from "/images/foodlogo.jpg";
+import { useState } from "react";
 export default Header = () => {
+  let intialBtnName = "Login";
+  const [btnName, setBtnName] = useState(intialBtnName);
   return (
     <div className="header">
       <div className="img-container">
@@ -11,6 +14,16 @@ export default Header = () => {
           <li>About Us</li>
           <li>Contact Us</li>
           <li>Cart</li>
+          <li>
+            <button
+              className="login"
+              onClick={() => {
+                setBtnName("Logout");
+              }}
+            >
+              {btnName}
+            </button>
+          </li>
         </ul>
       </div>
     </div>
