@@ -1,5 +1,6 @@
 import logo from "/images/foodlogo.jpg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export default Header = () => {
   let intialBtnName = "Login";
   const [btnName, setBtnName] = useState(intialBtnName);
@@ -10,9 +11,15 @@ export default Header = () => {
       </div>
       <div className="nav-container">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
           <li>Cart</li>
           <li>
             <button

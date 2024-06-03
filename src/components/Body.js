@@ -4,7 +4,9 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 export default Body = () => {
+  //when state variable(Local state variables) updates then the component rerenders
   const [restroList, setRestroList] = useState([]);
   const [filteredRestroList, setFilteredRestroList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,14 +15,18 @@ export default Body = () => {
     console.log(obj);
     const filteredList = restroList.filter((e) => e.info.avgRatingString > 4);
     setFilteredRestroList(filteredList);
+    //console.log(filteredList) this log gives old value of filteredList because new value will updates only when the component rerenders
   };
+  //if dependency array is not specified useEffect called everytime when the component renders
+  //if dependency array is empty useEffect its called only on initial component render
+  //if dependency array is [restroList] its called when restroList is updated
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.0082852&lng=79.5512119&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.0082852&lng=79.5512119&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -63,7 +69,9 @@ export default Body = () => {
       </div>
       <div className="restaurant-container">
         {filteredRestroList.map((e) => (
-          <RestaurantCard key={e.info.id} resData={e} />
+          <Link to={"/restaurant/" + e.info.id}>
+            <RestaurantCard key={e.info.id} resData={e} />
+          </Link>
         ))}
       </div>
     </div>

@@ -1,3 +1,6 @@
+body {
+  font-family: Basis_Grotesque_Pro_Bold;
+}
 #heading {
   color: purple;
 }
@@ -67,4 +70,22 @@
 }
 .filter-section {
   display: flex;
+}
+.menu-card {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cdc7c7;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.menu-section {
+  width: 70%;
+  margin: 0 auto;
+}
+.menu-item-img {
+  width: 200px;
+}
+.menu-item-title {
+  font-size: 20px;
+  font-weight: bold;
 }
