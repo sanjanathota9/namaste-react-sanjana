@@ -1,7 +1,7 @@
 //JSX---html like structure inside js,below jsx is converted into
 //ReactElement in background which is js object(this convertion is done by babel which is transpiler)
 
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -13,6 +13,11 @@ import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 
+//Dynamic Bundling
+//lazy Loading
+//On demand loading
+//Dynamic import
+const Grocery = lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
   return (
     <div className="app-container">
@@ -39,6 +44,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUs />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense>
+            <Grocery fallback={<h1>Loading</h1>} />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:resId",

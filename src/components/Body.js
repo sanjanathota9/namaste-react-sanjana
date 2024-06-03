@@ -1,6 +1,7 @@
 import restaurantList from "../utils/mockData";
 import { obj } from "../utils/constants";
 import RestaurantCard from "./RestaurantCard";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import Shimmer from "./Shimmer";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -37,7 +38,8 @@ export default Body = () => {
     setRestroList(restaurants);
     setFilteredRestroList(restaurants);
   };
-
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) return <h1>Internet is down</h1>;
   return !restroList?.length ? (
     <Shimmer />
   ) : (
