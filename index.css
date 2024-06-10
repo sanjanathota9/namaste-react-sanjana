@@ -1,4 +1,8 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
   font-family: Basis_Grotesque_Pro_Bold;
 }
 #heading {
@@ -88,4 +92,4 @@ body {
 .menu-item-title {
   font-size: 20px;
   font-weight: bold;
-}
+} */

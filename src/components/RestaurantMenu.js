@@ -14,13 +14,15 @@ export default RestaurantMenu = () => {
   const { cards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR;
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h2>{cuisines.join(",")}</h2>
-      <h2>{costForTwoMessage}</h2>
+    <div className="w-[80%] mx-auto my-0">
+      <div className="ml-16">
+        <h1 className="font-bold">{name}</h1>
+        <h2>{cuisines.join(",")}</h2>
+        <h2>{costForTwoMessage}</h2>
+      </div>
       {cards.map((e) => (
-        <div class="menu-section">
-          <p class="menu-item-title">{e?.card?.card?.title}</p>
+        <div class="ml-8">
+          <p class="ml-8 font-bold text-lg">{e?.card?.card?.title}</p>
           <ul>
             {e?.card?.card?.itemCards?.map((i) => (
               <MenuItem item={i?.card} />

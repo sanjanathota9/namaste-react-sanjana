@@ -44,17 +44,17 @@ export default Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter-section">
-        <div className="search">
+      <div className="filter-section flex items-center">
+        <div className="search m-4 p-4">
           <input
-            className="search-box"
+            className="search-box border border-solid border-black"
             onChange={(e) => {
               setSearchTerm(e.target.value);
             }}
             value={searchTerm}
           ></input>
           <button
-            className="search-btn"
+            className="px-4 py-2 bg-green-200 m-4 rounded-2xl"
             onClick={() => {
               const matchedItems = restroList.filter((e) =>
                 e.info.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -65,11 +65,11 @@ export default Body = () => {
             Search
           </button>
         </div>
-        <div className="filter-btn">
+        <div className="p-2 bg-green-200 rounded-2xl">
           <button onClick={filterTopRatedRestros}>Top Rated Restaurants</button>
         </div>
       </div>
-      <div className="restaurant-container">
+      <div className="flex flex-wrap">
         {filteredRestroList.map((e) => (
           <Link to={"/restaurant/" + e.info.id}>
             <RestaurantCard key={e.info.id} resData={e} />
