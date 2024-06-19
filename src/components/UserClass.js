@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 export class UserClass extends React.Component {
   constructor() {
     console.log("constructor");
@@ -22,8 +23,15 @@ export class UserClass extends React.Component {
   render() {
     const { login, id } = this.state.userInfo;
     console.log("render");
+
     return (
       <div>
+        <UserContext.Consumer>
+          {(data) => {
+            console.log("context data", data);
+          }}
+        </UserContext.Consumer>
+        ;
         <button
           className="btn"
           onClick={() => {

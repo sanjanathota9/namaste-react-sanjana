@@ -1,16 +1,20 @@
 import restaurantList from "../utils/mockData";
 import { obj } from "../utils/constants";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { RestaurantCardPromoted } from "./RestaurantCard";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Shimmer from "./Shimmer";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { UserClass } from "./UserClass";
+import UserContext from "../utils/UserContext";
 export default Body = () => {
   //when state variable(Local state variables) updates then the component rerenders
   const [restroList, setRestroList] = useState([]);
   const [filteredRestroList, setFilteredRestroList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const PromotedRestaurantCard = RestaurantCardPromoted(RestaurantCard);
+  const { userName, setUserName } = useContext(UserContext);
   const filterTopRatedRestros = () => {
     obj = { name: "sss" };
     console.log(obj);
@@ -68,11 +72,25 @@ export default Body = () => {
         <div className="p-2 bg-green-200 rounded-2xl">
           <button onClick={filterTopRatedRestros}>Top Rated Restaurants</button>
         </div>
+        <div className="p-2">
+          <label>UserName </label>
+          <input
+            className="border border-solid border-black"
+            value={userName}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap">
         {filteredRestroList.map((e) => (
           <Link to={"/restaurant/" + e.info.id}>
-            <RestaurantCard key={e.info.id} resData={e} />
+            {e.info.id ? (
+              <PromotedRestaurantCard key={e.info.id} resData={e} />
+            ) : (
+              <RestaurantCard key={e.info.id} resData={e} />
+            )}
           </Link>
         ))}
       </div>

@@ -25,3 +25,16 @@ export default RestaurantCard = (props) => {
     </div>
   );
 };
+//Higher order components--which takes components and return enhanced component
+export const RestaurantCardPromoted = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white rounded-lg m-2 p-2">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
