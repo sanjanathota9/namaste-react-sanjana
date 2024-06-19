@@ -1,7 +1,7 @@
 //JSX---html like structure inside js,below jsx is converted into
 //ReactElement in background which is js object(this convertion is done by babel which is transpiler)
 
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -12,25 +12,37 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/UserContext";
 
 //Dynamic Bundling
 //lazy Loading
 //On demand loading
 //Dynamic import
 const Grocery = lazy(() => import("./components/Grocery"));
-const AppLayout = () => {
+const App = () => {
+  const [username, setUserName] = useState("");
+  useEffect(() => {
+    const data = {
+      name: "sanjana thota",
+    };
+    setUserName(data.name);
+  }, []);
   return (
-    <div className="app-container">
-      <Header />
-      <Outlet />
-      {/**outlet will be filled with children based on path */}
-    </div>
+    //below is the way to change userContext if we wrap this only around header only the updated username will be visible in header
+    <UserContext.Provider value={{ userName: username, setUserName }}>
+      <div className="app-container">
+        <Header />
+        <Outlet />
+        {/**outlet will be filled with children based on path */}
+      </div>
+    </UserContext.Provider>
   );
 };
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: <App />,
     children: [
       {
         path: "/",
